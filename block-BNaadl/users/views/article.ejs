@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+<style>
+    .data {
+        background-color: rgb(44, 228, 203);
+        padding: 20px;
+        font-size: 18px
+    }
+    
+    h2 {
+        background-color: rgb(240, 198, 229);
+        padding: 5px;
+        font-size: 40px
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="flex">
+            <a href="/" class="btn btn-primary"> Users </a>
+            <a href="/users/new" class="btn btn-secondary">Add new User</a>
+        </div>
+        <h1>User List</h1>
+
+
+        <% users.forEach(user => {%>
+            <h2>
+                Name :
+                <%= user.name %>
+            </h2>
+            <p class="data">
+                Email :
+                <%= user.email %>
+                    <br> Age:
+                    <%= user.age %>
+                        <br> Gender
+                        <%= user.gender %>
+                            <br>
+
+            </p>
+            <a href="/users/<%= user._id%>">
+
+                <button>Show</button>
+            </a>
+
+
+
+
+            <% }) %>
+    </div>
+</body>
+
+</html>
