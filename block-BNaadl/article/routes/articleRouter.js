@@ -41,7 +41,6 @@ router.get("/:id/edit", (req, res) => {
     article.findById(id, (err, nextarticle) => {
         if (err) return next(err);
         res.render("editArticle", { article: nextarticle });
-
     })
 });
 router.get("/:id/delete", (req, res) => {
@@ -81,8 +80,5 @@ router.post("/:id", (req, res) => {
 
 })
 
-router.delete("/:id", (req, res) => {
-
-});
 
 module.exports = router;
