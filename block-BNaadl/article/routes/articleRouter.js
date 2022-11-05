@@ -73,7 +73,7 @@ router.get("/:id/increment", (req, res) => {
 });
 router.post("/:id", (req, res) => {
     var id = req.params.id;
-    article.findByIdAndUpdate(id, (err, nextarticle) => {
+    article.findByIdAndUpdate(id,req.body, (err, nextarticle) => {
         if (err) return next(err);
         res.render("/article/" + id)
     });
