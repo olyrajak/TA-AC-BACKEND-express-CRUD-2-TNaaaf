@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/book.css" />
+</head>
+
+<body>
+
+
+
+    <div class="header">
+
+        <h2 class="">Welcome To Book Store</h2>
+        <div class="header-right">
+            <a class="active" href="">List</a>
+            <a href="/authors/new">Add</a>
+        </div>
+    </div>
+    <main>
+        <section class="hero-Sec">
+            <div class="content">
+                <section>
+
+                    <div class="container">
+                        <div class="title">
+                            <h1>Author Details</h1>
+                        </div>
+                        <% authors.forEach(author => { %>
+                            <div class="author">
+                                <h2 class="author-name">
+                                    <span>    Author Name :</span>
+
+                                    <%= author.name %>
+                                </h2>
+                                <p class="author-email">
+                                    <span>Email:</span>
+
+                                    <%= author.email %>
+                                </p>
+                                <p class="author-country">
+                                    <span>   Country:</span>
+
+                                    <%= author.country %>
+                                </p>
+                                <a href="/authors/<%= author._id%>">
+
+                                    <button class="btn btn-primary">Show Details</button>
+                                </a>
+                            </div>
+                            <% }) %>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </section>
+    </main>
+    <div class="footer">
+        <h3>Footer</h3>
+    </div>
+</body>
+
+</html>

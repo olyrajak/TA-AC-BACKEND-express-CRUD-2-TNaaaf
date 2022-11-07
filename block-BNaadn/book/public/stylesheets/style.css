@@ -1,0 +1,123 @@
+body {
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.form {
+    display: flex;
+}
+
+.category {
+    height: 600px;
+    width: 700px
+}
+
+.category2 {
+    height: 600px;
+    width: 700px
+}
+
+.header {
+    overflow: hidden;
+    background-color: #f1f1f1;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.header a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+}
+
+.header a.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.header a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.header a.active {
+    background-color: dodgerblue;
+    color: white;
+}
+
+.header-right {
+    float: right;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(163, 162, 162);
+    color: white;
+    text-align: center;
+}
+
+@media screen and (max-width: 500px) {
+    .header a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+    .header-right {
+        float: none;
+    }
+}
+
+span {
+    text-decoration: underline;
+    color: black;
+}
+
+.author {
+    padding: 20px;
+    line-height: 50px;
+    background-color: rgb(255, 252, 224);
+    margin: 10px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px rgb(233, 162, 8);
+}
+
+.book {
+    padding: 20px;
+    line-height: 50px;
+    background-color: rgb(215, 255, 240);
+    margin: 10px;
+    border-radius: 20px;
+    box-shadow: 4px 2px 5px rgb(0, 61, 23);
+}
+
+.author-name {
+    font-size: 30px;
+    color: rgb(231, 125, 99)
+}
+
+.author-email {
+    font-size: 25px;
+    color: rgb(25, 2, 126)
+}
+
+.author-country {
+    font-size: 25px;
+    color: rgb(3, 78, 3)
+}

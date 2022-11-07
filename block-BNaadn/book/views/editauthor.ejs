@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/book.css" />
+</head>
+
+<body>
+
+
+
+    <div class="header">
+
+        <h2 class="">Welcome To Book Store</h2>
+        <div class="header-right">
+            <a class="active" href="">List</a>
+            <a href="/authors/new">Add</a>
+        </div>
+    </div>
+    <main>
+        <section class="hero-Sec">
+            <div class="content">
+                <section>
+
+                    <div class="container">
+                        <div class="title">Edit Author</div>
+                        <form action="/authors/<%= author._id%>" method="POST">
+                            <div class="user__details">
+                                <div class="input__box">
+                                    <span class="details">Name</span>
+                                    <input type="text" name="name" placeholder="Name" value="<%= author.name %>">
+                                </div>
+                                <div class="input__box">
+                                    <span class="details">Email</span>
+                                    <input type="text" name="email" placeholder="Email" value="<%= author.email %>">
+                                </div>
+                                <div class="input__box">
+                                    <span class="details">Country</span>
+                                    <input type="text" name="country" placeholder="Country" value="<%= author.country %>">
+                                </div>
+
+                            </div>
+                            <div class="button">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </section>
+
+            </div>
+
+        </section>
+    </main>
+    <div class="footer">
+        <h3>Footer</h3>
+    </div>
+</body>
+
+</html>
