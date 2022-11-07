@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/book.css" />
+</head>
+
+<body>
+
+
+
+    <div class="header">
+
+        <h2 class="">Welcome To Book Store</h2>
+        <div class="header-right">
+            <a class="active" href="">List</a>
+            <a href="/authors/new">Add</a>
+        </div>
+    </div>
+    <main>
+        <section class="hero-Sec">
+            <div class="content">
+                <section>
+
+                    <div class="container">
+                        <div class="title">Author</div>
+                        <div class="author">
+                            <h2 class="author-name">
+                                <span>    Author Name :</span>
+
+                                <%= author.name %>
+                            </h2>
+                            <p class="author-email">
+                                <span>Email:</span>
+
+                                <%= author.email %>
+                            </p>
+                            <p class="author-country">
+                                <span>   Country:</span>
+
+                                <%= author.country %>
+                            </p>
+
+                            <a href="/authors/<%= author._id%>/editbook">
+
+                                <button class="btn btn-success">Edit</button>
+                            </a>
+                            <a href="/authors/<%= author._id%>/deletebook">
+
+                                <button class="btn btn-danger">Delete</button>
+                            </a>
+                        </div>
+                        <div class="form">
+                            <form action="/authors/<%= author._id%>/createbook" method="POST">
+                                <div class="book category">
+                                    <h2>Add Book Details</h2>
+                                    <div class="user__details">
+                                        <div class="input__box">
+                                            <span class="details">Title</span>
+                                            <input type="text" name="title" placeholder="Title">
+                                        </div>
+                                        <div class="input__box">
+                                            <span class="details">Summary</span>
+                                            <input type="text" name="summary" placeholder="Summary">
+                                        </div>
+                                        <div class="input__box">
+                                            <span class="details">Pages</span>
+                                            <input type="number" name="pages" placeholder="Pages">
+                                        </div>
+                                        <div class="input__box">
+                                            <span class="details">Publication</span>
+                                            <input type="text" name="publication" placeholder="Publication">
+                                        </div>
+                                        <div class="input__box">
+                                            <span class="details">Publication</span>
+                                            <input type="file" name="cover_image" placeholder="Image">
+                                        </div>
+
+                                    </div>
+                                    <div class="button">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
+                                </div>
+
+                            </form>
+                            <form action="/authors/<%= author._id%>/category" method="POST">
+                                <div class="book category2">
+                                    <h2>Add Book Category</h2>
+                                    <div class="user__details">
+                                        <div class="input__box">
+                                            <span class="details">Type</span>
+                                            <input type="text" name="type" placeholder="Type">
+                                        </div>
+                                    </div>
+                                    <div class="button">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                        <div class="container">
+                            <div class="title">Book Details</div>
+                            <% author.bookId.forEach(book => { %>
+                                <div class="author">
+                                    <h2 class="author-name">
+                                        <span>    Book Title :</span>
+
+                                        <%= book.title %>
+                                    </h2>
+                                    <p class="author-email">
+                                        <span>Summery:</span>
+
+                                        <%= book.summary %>
+                                    </p>
+                                    <p class="author-country">
+                                        <span>Pages:</span>
+
+                                        <%= book.pages %>
+                                    </p>
+                                    <p class="author-country">
+                                        <span>Publication:</span>
+
+                                        <%= book.publication %>
+                                    </p>
+                                    <p class="author-country">
+                                        <span>Image:</span>
+                                        <img src=" <%= book.cover_image %>" alt="">
+
+                                    </p>
+
+                                    <a href="/authors/<%= book._id%>/edit">
+
+                                        <button class="btn btn-success">Edit</button>
+                                    </a>
+                                    <a href="/authors/<%= book._id%>/delete">
+
+                                        <button class="btn btn-danger">Delete</button>
+                                    </a>
+                                </div>
+                                <% }) %>
+
+                                    <div class="title">Categories</div>
+                                    <% author.bookId.forEach(category => { %>
+                                        <div class="author">
+                                            <h2 class="author-name">
+                                                <span>    Type :</span>
+
+                                                <%= category.type %>
+                                            </h2>
+
+
+                                            <a href="#">
+
+                                                <button class="btn btn-success">Edit</button>
+                                            </a>
+                                            <a href="#">
+
+                                                <button class="btn btn-danger">Delete</button>
+                                            </a>
+                                        </div>
+                                        <% }) %>
+                        </div>
+
+                    </div>
+
+            </div>
+
+            </section>
+
+            </div>
+
+        </section>
+    </main>
+    <div class="footer">
+        <h3>Footer</h3>
+    </div>
+</body>
+
+</html>
